@@ -10,11 +10,9 @@ Span::Span(unsigned int N) : _size(N), _compt(0)
 	std::cout << "Span constructor called\n";
 }
 
-Span::Span(const Span &obj)
+Span::Span(const Span &obj) : _size(obj._size), _compt(obj._compt), _set(obj._set)
 {
 	std::cout << "Copy constructor called\n";
-	*this = obj;
-	return ;
 }
 
 Span &Span::operator=(const Span &obj)
@@ -22,7 +20,9 @@ Span &Span::operator=(const Span &obj)
 	std::cout << "Copy assignment operator called\n";
 	if (this != &obj)
 	{
-		
+		_set = obj._set;
+		_compt = obj._compt;
+		_size = obj._size;
 	}
 	return *this;
 }
