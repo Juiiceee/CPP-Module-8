@@ -12,7 +12,7 @@ int main()
 	for(int i = 0; i < 1000; i++)
 		hello.push_back(i);
 
-	std::vector<int>::const_iterator it = easyfind(hello, 580);
+	std::vector<int>::const_iterator it = easyfind(hello, 10000);
 
 		if (it != hello.end())
 		std::cout << "Value 580 found at position: " << it - hello.begin() << std::endl;
